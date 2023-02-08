@@ -6,6 +6,7 @@ import static dev.andrewjfei.jacoco.sonar.cloud.example.utils.NumberUtil.add;
 import static dev.andrewjfei.jacoco.sonar.cloud.example.utils.NumberUtil.max;
 import static dev.andrewjfei.jacoco.sonar.cloud.example.utils.NumberUtil.min;
 import static dev.andrewjfei.jacoco.sonar.cloud.example.utils.NumberUtil.subtract;
+import static dev.andrewjfei.jacoco.sonar.cloud.example.utils.NumberUtil.zeroChecker;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class NumberUtilTest {
@@ -22,7 +23,7 @@ public class NumberUtilTest {
     }
 
     @Test
-    public void testSubstract_returnsCorrectResult() {
+    public void testSubtract_returnsCorrectResult() {
         int a = 7;
         int b = 2;
         int expected = 5;
@@ -73,6 +74,36 @@ public class NumberUtilTest {
         int expected = 6;
 
         int result = min(a, b);
+
+        assertEquals(expected, result);
+    }
+
+    @Test
+    public void testZeroChecker_lessThanZero_returnsCorrectResult() {
+        int a = -9;
+        int expected = -1;
+
+        int result = zeroChecker(a);
+
+        assertEquals(expected, result);
+    }
+
+    @Test
+    public void testZeroChecker_isZero_returnsCorrectResult() {
+        int a = 0;
+        int expected = 0;
+
+        int result = zeroChecker(a);
+
+        assertEquals(expected, result);
+    }
+
+    @Test
+    public void testZeroChecker_greaterThanZero_returnsCorrectResult() {
+        int a = 5;
+        int expected = 1;
+
+        int result = zeroChecker(a);
 
         assertEquals(expected, result);
     }
