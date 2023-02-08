@@ -47,4 +47,10 @@ public class NumberUtil {
         return value;
     }
 
+    public static boolean isZero(int a) {
+        logger.debug("Inputs [ a = {} ]", a);
+
+        return a == 0 ? true : false;
+    }
+
 }
