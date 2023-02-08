@@ -3,6 +3,7 @@ package dev.andrewjfei.jacoco.sonar.cloud.example.utils;
 import org.junit.jupiter.api.Test;
 
 import static dev.andrewjfei.jacoco.sonar.cloud.example.utils.NumberUtil.add;
+import static dev.andrewjfei.jacoco.sonar.cloud.example.utils.NumberUtil.isZero;
 import static dev.andrewjfei.jacoco.sonar.cloud.example.utils.NumberUtil.max;
 import static dev.andrewjfei.jacoco.sonar.cloud.example.utils.NumberUtil.min;
 import static dev.andrewjfei.jacoco.sonar.cloud.example.utils.NumberUtil.subtract;
@@ -104,6 +105,17 @@ public class NumberUtilTest {
         int expected = 1;
 
         int result = zeroChecker(a);
+
+        assertEquals(expected, result);
+    }
+
+
+    @Test
+    public void testIsZero_isZero_returnsCorrectResult() {
+        int a = 0;
+        boolean expected = true;
+
+        boolean result = isZero(a);
 
         assertEquals(expected, result);
     }
