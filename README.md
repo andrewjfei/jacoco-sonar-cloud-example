@@ -9,3 +9,8 @@ An example project demonstrating how to set up Sonar Cloud analysis with JaCoCo 
 - Maven 3
 
 ## Getting Started
+
+## To Do
+
+- Double check that duplicate code is analysed by **Sonar Cloud**
+
